@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "boxicons": "^2.1.4",
+    "datatables.net-bs5": "^2.1.6",
+    "datatables.net-buttons-bs5": "^3.1.2",
+    "jquery": "^3.7.1",
+    "nh-picker": "^4.0.2"
+  }
+}
