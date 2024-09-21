@@ -1,13 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   height: 100vh;
   width: 100%;
-  overflow: auto;
+  overflow: hidden;
 }
 
 button {
@@ -18,8 +19,20 @@ button {
 
 #app {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
+}
+#app .nf-btn {
+  outline: none;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  padding: 5px 20px;
+}
+#app .nf-btn.nf-btn-primary {
+  border: 1px solid #0d6efd;
 }
 #app .right-side .app-logo,
 #app .right-side .header,
@@ -27,6 +40,10 @@ button {
 #app .left-side .header {
   height: 80px;
   width: 100%;
+}
+#app .right-side .header,
+#app .left-side .header {
+  height: 70px;
 }
 #app .right-side .app-menu,
 #app .right-side .application,
@@ -42,32 +59,53 @@ button {
 }
 #app .left-side .app-logo,
 #app .left-side .app-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 #app .left-side .app-logo {
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 #app .left-side .app-logo .logo {
   height: 80px;
 }
 #app .left-side .app-menu {
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 #app .left-side .app-menu .menu-item {
   color: rgba(255, 255, 255, 0.8);
   border: none;
   text-align: center;
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 80px;
   width: 90px;
   margin: 10px 0;
   border-radius: 5px;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 #app .left-side .app-menu .menu-item.active {
@@ -84,19 +122,31 @@ button {
 #app .right-side {
   width: calc(100% - 110px);
   height: 100vh;
+  overflow: hidden;
 }
 #app .right-side .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0 20px;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 20px;
-  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+          box-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 #app .right-side .header .right-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 #app .right-side .header .menu-item {
   margin: 0 10px;
@@ -114,10 +164,17 @@ button {
   font-size: 20px;
 }
 #app .right-side .header .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border-radius: 20px;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 #app .right-side .header .search input {
@@ -137,6 +194,12 @@ button {
 }
 #app .right-side .header .search.collapse input {
   display: block;
+}
+#app .application {
+  overflow: hidden;
+}
+#app .application .row {
+  height: 100%;
 }
 #app .profile-menu .profile-image {
   height: 40px;
@@ -168,37 +231,147 @@ button {
 #app .profile-menu .dropdown-menu .dropdown-item {
   padding: 5px 20px;
 }
-#app .files-menu ul {
+#app .file-menu-bar {
+  height: 100%;
+}
+#app .file-menu-bar .files-menu {
+  height: calc(100% - 60px);
+  overflow: auto;
+  margin-bottom: 10px;
+  width: 100%;
+}
+#app .file-menu-bar .files-menu ul {
   list-style: none;
 }
-#app .files-menu ul.files {
-  overflow: auto;
+#app .file-menu-bar .files-menu ul.files {
   padding: 0 10px;
 }
-#app .files-menu ul.files .folder {
+#app .file-menu-bar .files-menu ul.files .folder {
   margin: 8px 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: auto;
+  text-wrap: nowrap;
 }
-#app .files-menu ul.files .folder span {
+#app .file-menu-bar .files-menu ul.files .folder i.opener {
+  color: #fd7e14;
+  font-size: 22px;
+  border-radius: 4px;
+  padding: 0;
+}
+#app .file-menu-bar .files-menu ul.files .folder i.opener:hover {
+  background-color: #343a40;
+  color: #0d6efd;
+}
+#app .file-menu-bar .files-menu ul.files .folder span {
   text-wrap: nowrap;
   width: auto;
-  padding: 2px 10px;
+  padding: 2px 5px 2px 0;
   border-radius: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #ced4da;
 }
-#app .files-menu ul.files .folder span i {
+#app .file-menu-bar .files-menu ul.files .folder span i {
   margin-right: 10px;
   color: #fd7e14;
   font-size: 22px;
 }
-#app .files-menu ul.files .folder span:hover {
-  background-color: #343a40;
-  color: #0d6efd;
+#app .file-menu-bar .files-menu ul.files .folder span:hover {
+  color: #f8f9fa;
 }
-#app .files-menu ul.files .folder .folder-items {
+#app .file-menu-bar .files-menu ul.files .folder .folder-items {
   display: none;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  text-wrap: nowrap !important;
 }
-#app .files-menu ul.files .folder.opened .folder-items:not(.closed) {
+#app .file-menu-bar .files-menu ul.files .folder .folder-items li.file {
+  margin-left: 24px;
+}
+#app .file-menu-bar .files-menu ul.files .folder .folder-items li.file i {
+  margin-right: 5px;
+  color: #0dcaf0;
+}
+#app .file-menu-bar .files-menu ul.files .folder.opened .folder-items:not(.closed) {
   display: block;
 }
-
-/*# sourceMappingURL=style.css.map */
+#app .files-list {
+  height: 100%;
+}
+#app .files-list .option-bar .file-options .option {
+  text-decoration: none;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#app .files-list .option-bar .file-options .option.nfp-unable {
+  color: #6c757d;
+}
+#app .files-list .option-bar .file-options .option:not(.nfp-unable):hover {
+  background-color: #343a40;
+  border-radius: 5px;
+}
+#app .files-list .option-bar .file-options .option.nfp-able {
+  color: #f8f9fa;
+}
+#app .files-list .option-bar .file-options .option:nth-last-child(1) {
+  margin-right: 0;
+}
+#app .files-list .option-bar .file-options .option i {
+  margin-right: 5px;
+  font-size: 22px;
+}
+#app .files-list .list-view {
+  height: calc(100% - 80px);
+  overflow: auto;
+}
+#app .files-list .list-view .list-table tbody tr:hover, #app .files-list .list-view .list-table tbody tr.selected {
+  background-color: #343a40;
+}
+#app .files-list .list-view .list-table tbody tr td {
+  background: none;
+}
+#app .files-list .list-view .list-table tbody tr td:nth-child(1) {
+  color: #ced4da;
+  vertical-align: middle;
+}
+#app .files-list .list-view .list-table tbody tr td:nth-child(1) i {
+  font-size: 22px;
+  color: #fd7e14;
+  margin-right: 10px;
+}
+#app .files-list .list-view .list-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+#app .files-list .list-view .list-grid .list-item {
+  text-align: center;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  width: 100px;
+  height: 90px;
+  overflow: hidden;
+  color: #ced4da;
+  border-radius: 5px;
+}
+#app .files-list .list-view .list-grid .list-item:hover, #app .files-list .list-view .list-grid .list-item.selected {
+  background-color: #343a40;
+}
+#app .files-list .list-view .list-grid .list-item i {
+  font-size: 60px;
+  color: #fd7e14;
+}
